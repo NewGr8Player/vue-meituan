@@ -27,7 +27,7 @@
 
     <!-- 重要的栏目 -->
     <div class="important">
-      <cross-item name="我的收藏">
+      <cross-item name="我的收藏" @click="say">
         <i class="iconfont icon-shoucang1"></i>
       </cross-item>
 
@@ -79,6 +79,9 @@ export default {
       this.$router.push({
         path: '/login'
       })
+    },
+    say () {
+      console.log('xxx')
     }
   },
   filters: {},
