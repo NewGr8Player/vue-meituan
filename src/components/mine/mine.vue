@@ -27,7 +27,7 @@
 
     <!-- 重要的栏目 -->
     <div class="important">
-      <cross-item name="我的收藏" @click="say">
+      <cross-item name="我的收藏" @click.native="say">
         <i class="iconfont icon-shoucang1"></i>
       </cross-item>
 
@@ -82,6 +82,7 @@ export default {
     },
     say () {
       console.log('xxx')
+      alert('xxxx')
     }
   },
   filters: {},
