@@ -19,10 +19,12 @@ import '@/assets/ali-fonts/iconfont.css'
 // Mint UI
 import Mint from 'mint-ui'
 import 'mint-ui/lib/style.css'
+
 Vue.use(Mint)
 
 // 图片懒加载
 import VueLazyload from 'vue-lazyload'
+
 Vue.use(VueLazyload, {
   loading: '/static/loading-bars.svg'
   // loading: require('@/assets/img/logo.png')
@@ -31,7 +33,16 @@ Vue.use(VueLazyload, {
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router,
+  router, /* router : router */
   template: '<App/>',
-  components: { App }
+  components: {App}
+})
+
+/* If no path matched,go parent level */
+router.beforeEach((to, from, next) => {
+  if (to.matched.length === 0) {
+    from.name ? next({name: from.name}) : next('/')
+  } else {
+    next()
+  }
 })

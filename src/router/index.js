@@ -60,6 +60,11 @@ const Seller = (resolve) => {
     resolve(module)
   })
 }
+const CrossIndex = (resolve) => {
+  import('@/components/mine/cross-index/cross-index').then((module) => {
+    resolve(module)
+  })
+}
 const login = (resolve) => {
   import('@/components/login/login').then((module) => {
     resolve(module)
@@ -122,7 +127,13 @@ export default new Router({
     // 我的
     {
       path: '/mine',
-      component: Mine
+      component: Mine,
+      children: [
+        {
+          path: 'cross_index',
+          component: CrossIndex
+        }
+      ]
     }
   ]
 })

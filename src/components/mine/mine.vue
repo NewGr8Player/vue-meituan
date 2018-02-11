@@ -59,121 +59,123 @@
 </template>
 
 <script>
-import TabBar from '@/components/base/tab-bar/tab-bar'
-import CrossLine from '@/components/base/cross-line/cross-line'
-import CrossItem from '@/components/base/cross-item/cross-item'
+  import TabBar from '@/components/base/tab-bar/tab-bar'
+  import CrossLine from '@/components/base/cross-line/cross-line'
+  import CrossItem from '@/components/base/cross-item/cross-item'
 
-export default {
-  components: {
-    TabBar,
-    CrossLine,
-    CrossItem
-  },
-  data () {
-    return {}
-  },
-  props: {},
-  watch: {},
-  methods: {
-    login () {
-      this.$router.push({
-        path: '/login'
-      })
+  export default {
+    components: {
+      TabBar,
+      CrossLine,
+      CrossItem
     },
-    say () {
-      console.log('xxx')
-      alert('xxxx')
-    }
-  },
-  filters: {},
-  computed: {},
-  created () {},
-  mounted () {},
-  destroyed () {}
-}
+    data () {
+      return {}
+    },
+    props: {},
+    watch: {},
+    methods: {
+      login () {
+        this.$router.push({
+          path: '/login'
+        })
+      },
+      say () {
+        alert('DDD')
+        this.$router.push({
+          path: '/mine/cross_index'
+        })
+      }
+    },
+    filters: {},
+    computed: {},
+    created () {},
+    mounted () {},
+    destroyed () {}
+  }
 </script>
 
 <style lang="scss" scoped>
-@import '~@/assets/scss/const.scss';
-@import '~@/assets/scss/mixin.scss';
+  @import '~@/assets/scss/const.scss';
+  @import '~@/assets/scss/mixin.scss';
 
-.mine {
-  width: 100%;
-  height: 100%;
-  background-color: #ebebeb;
-  .top {
-    display: flex;
-    position: relative;
+  .mine {
     width: 100%;
-    height: 120px;
-    background-color: #06c1ae;
-    .info {
-      flex: 2;
+    height: 100%;
+    background-color: #ebebeb;
+    .top {
       display: flex;
-      flex-direction: row;
-      margin-top: 40px;
-      .avatar-wrapper {
-        width: 70px;
-        height: 70px;
-        margin-left: 20px;
-        img {
+      position: relative;
+      width: 100%;
+      height: 120px;
+      background-color: #06c1ae;
+      .info {
+        flex: 2;
+        display: flex;
+        flex-direction: row;
+        margin-top: 40px;
+        .avatar-wrapper {
           width: 70px;
           height: 70px;
-          border-radius: 50%;
+          margin-left: 20px;
+          img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+          }
         }
-      }
-      .name-wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 55px;
-        margin-top: 10px;
-        margin-left: 20px;
-        .name {
-          font-size: 16px;
-          color: #fff;
-          font-weight: bold;
-        }
-        .desc {
-          font-size: 16px;
-          color: #fcfefe;
-          i {
-            font-size: 18px;
+        .name-wrapper {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 55px;
+          margin-top: 10px;
+          margin-left: 20px;
+          .name {
+            font-size: 16px;
+            color: #fff;
+            font-weight: bold;
+          }
+          .desc {
+            font-size: 16px;
+            color: #fcfefe;
+            i {
+              font-size: 18px;
+            }
           }
         }
       }
+      .operation {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        i {
+          margin-top: 10px;
+          margin-right: 15px;
+          color: #fff;
+          font-size: 18px;
+          font-weight: 500;
+        }
+      }
     }
-    .operation {
-      flex: 1;
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      i {
-        margin-top: 10px;
-        margin-right: 15px;
-        color: #fff;
-        font-size: 18px;
-        font-weight: 500;
+    .important {
+      width: 100%;
+      background-color: #fff;
+      .cross-item {
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+    .minor {
+      width: 100%;
+      background-color: #fff;
+      .cross-item {
+        &:last-child {
+          border-bottom: none;
+        }
       }
     }
   }
-  .important {
-    width: 100%;
-    background-color: #fff;
-    .cross-item {
-      &:last-child {
-        border-bottom: none;
-      }
-    }
-  }
-  .minor {
-    width: 100%;
-    background-color: #fff;
-    .cross-item {
-      &:last-child {
-        border-bottom: none;
-      }
-    }
-  }
-}
 </style>
